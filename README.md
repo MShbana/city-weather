@@ -4,18 +4,23 @@
 
 A service that authenticates users and displays the temprature of the requeested city
 
-## Installation
+---
 
-1. `git clone https://github.com/MShbana/city-weather.git city_weather`
-2. `cd city_weather`
-3. `python3 -m venv ../env`
-4. `source ../env/bin/activate`
-5. `pip install -r requirements.txt`
-6. `python manage.py makemigrations`
-7. `python manage.py migrate`
-8. `python manage.py runserver`
+## Configuration and Installation
 
---
+1. Create an account in **https://openweathermap.org/**. An email will be sent with your **API KEY**.
+2. Inside a shell (it will be available only for the current shell session) or inside **~/.bashrc** (for all shell sessions), store the variable **API KEY** that you have received in your email -> `export API_KEY='<RECEIVED_API_KEY>'`
+3. Clone the project -> `git clone https://github.com/MShbana/city-weather.git city_weather`
+4. Change directory into the cloned project -> `cd city_weather`
+5. Create a virtual environment in the project's parent directory -> `python3 -m venv ../env`
+6. Activate the vritual environment `source ../env/bin/activate`
+7. Install the required software -> `pip install -r requirements.txt`
+8. Generate the SQL commands for the database changes -> `python manage.py makemigrations`
+9. Execute those SQL commands -> `python manage.py migrate`
+10. Run the server on port 8000 -> `python manage.py runserver`
+11. Access the web application on **http://localhost:8000**
+
+---
 
 ## How to Use
 
