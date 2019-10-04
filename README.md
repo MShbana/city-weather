@@ -203,7 +203,7 @@ A service that authenticates users and displays the temperature of the requested
     }
 ```
 
-### Change Password for the current logged in user
+### Change Password for the current logged-in user
 
 - POST request to `/api/auth/password/change/`
 - Sample POST:
