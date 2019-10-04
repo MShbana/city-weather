@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Log In
+{% endblock title %}
+{% block content %}
+    <div class="logged-out">
+        <form method="POST">
+            {% csrf_token %}
+            <legend class="pb-2 mb-4">
+                Sign in to Weather App
+            </legend>
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group pt-2">
+                <button class="btn btn-outline-primary btn-sm">Log In</button>
+            </div>
+        </form>
+        <div class="text-right">
+            <small>
+                New to Weather App?
+                <a href="{% url 'register' %}">Create an account</a>.
+            </small>
+        </div>
+    </div>
+{% endblock content %}
