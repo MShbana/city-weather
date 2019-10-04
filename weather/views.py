@@ -4,8 +4,10 @@ import requests
 from .forms import CityForm
 from django.contrib import messages
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def home(request):
 
     if request.method == 'POST':
