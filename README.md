@@ -2,31 +2,41 @@
 
 ## Overview
 
-A service that authenticates users and displays the temprature of the requeested city
+A service that authenticates users and displays the temperature of the requested city.
+
+---
+
+## Project Structure
+
+1. **api App:** Responsible for creating API endpoints for user list, registeration, login, etc.
+
+2. **accounts App:** Responsible for the acutal implementaion of the usre's login, registeration and logout.
+
+3. **weather App:** Responsible for the homepage containing the form to query cities and the page showing the temperature and weather description of that city.
+
+4. **city_weather App:** Responsible for general configurations of the app.
 
 ---
 
 ## Configuration and Installation
 
 1. Create an account in **https://openweathermap.org/**. An email will be sent with your **API KEY**.
-2. Inside a shell (it will be available only for the current shell session) or inside **~/.bashrc** (for all shell sessions), store the variable **API KEY** that you have received in your email -> `export API_KEY='<RECEIVED_API_KEY>'`
-3. Clone the project -> `git clone https://github.com/MShbana/city-weather.git city_weather`
-4. Change directory into the cloned project -> `cd city_weather`
-5. Create a virtual environment in the project's parent directory -> `python3 -m venv ../env`
+2. Inside a shell (it will be available only for the current shell session) or inside **~/.bashrc** (for all shell sessions), store the variable **API KEY** that you have received in your email: `export API_KEY='<RECEIVED_API_KEY>'`
+3. Clone the project: `git clone https://github.com/MShbana/city-weather.git city_weather`
+4. Change directory into the cloned project: `cd city_weather`
+5. Create a virtual environment in the project's parent directory: `python3 -m venv ../env`
 6. Activate the vritual environment `source ../env/bin/activate`
-7. Install the required software -> `pip install -r requirements.txt`
-8. Generate the SQL commands for the database changes -> `python manage.py makemigrations`
-9. Execute those SQL commands -> `python manage.py migrate`
-10. Run the server on port 8000 -> `python manage.py runserver`
+7. Install the required software: `pip install -r requirements.txt`
+8. Generate the SQL commands for the database changes: `python manage.py makemigrations`
+9. Execute the generated SQL commands: `python manage.py migrate`
+10. Run the server on port 8000: `python manage.py runserver`
 11. Access the web application on **http://localhost:8000**
 
 ---
 
-## How to Use
+## How to Use (API Endpoints)
 
-### APIS
-
-#### Return all registered users (Available for Admins only)
+### Return all registered users (Available for Admins only)
 
 - GET request to `/api/users/`.
 - Sample Response:
@@ -57,7 +67,7 @@ A service that authenticates users and displays the temprature of the requeested
     ]
 ```
 
-#### Register a new user
+### Register a new user
 
 - POST request to `/api/users/`.
 - Sample POST:
@@ -83,7 +93,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Return the details of a specific user by ID (Available for Admins only)
+### Return the details of a specific user by ID (Available for Admins only)
 
 - GET request to `/api/users/<pk>`.
 - Sample Response:
@@ -97,7 +107,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Delete a specific user by ID (Available for Admins only)
+### Delete a specific user by ID (Available for Admins only)
 
 - DELETE request to `/api/users/<pk>`.
 - Sample DELETE:
@@ -111,7 +121,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Update the details of a specific user by ID (Available for Admins only)
+### Update the details of a specific user by ID (Available for Admins only)
 
 - PUT request to `/api/users/`.
 - Sample PUT:
@@ -125,7 +135,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Return the details of the current logged-in user
+### Return the details of the current logged-in user
 
 - GET request to `/api/auth/user/`.
 - Sample Response:
@@ -139,7 +149,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Update the details of the current logged-in user
+### Update the details of the current logged-in user
 
 - PUT request to `/api/auth/user/`
 - Sample PUT:
@@ -153,7 +163,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Return the REST Token if the credentials are valid and authenticated (User Login)
+### Return the REST Token if the credentials are valid and authenticated (User Login)
 
 - POST request to `/api/auth/login/`
 - Sample POST (email not required):
@@ -182,7 +192,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Delete the Token object assigned to the User (User Logout)
+### Delete the Token object assigned to the User (User Logout)
 
 - POST request to `/api/auth/logout/`
 - Sample Response:
@@ -193,7 +203,7 @@ A service that authenticates users and displays the temprature of the requeested
     }
 ```
 
-#### Change Password for the current logged in user
+### Change Password for the current logged in user
 
 - POST request to `/api/auth/password/change/`
 - Sample POST:
